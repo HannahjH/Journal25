@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2C9BEA2262CBFE00BEFD36 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C9BE92262CBFE00BEFD36 /* Entry.swift */; };
+		AF2C9BEE2262CC9F00BEFD36 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2C9BED2262CC9F00BEFD36 /* CloudKit.framework */; };
+		AF2C9BF02262CD2300BEFD36 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C9BEF2262CD2300BEFD36 /* EntryController.swift */; };
 		AF5327F82262C9F4009F2FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5327F72262C9F4009F2FB8 /* AppDelegate.swift */; };
 		AF5327FD2262C9F4009F2FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5327FB2262C9F4009F2FB8 /* Main.storyboard */; };
 		AF5327FF2262C9F4009F2FB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5327FE2262C9F4009F2FB8 /* Assets.xcassets */; };
@@ -14,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF2C9BE92262CBFE00BEFD36 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		AF2C9BEB2262CC9C00BEFD36 /* Journal25.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journal25.entitlements; sourceTree = "<group>"; };
+		AF2C9BED2262CC9F00BEFD36 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AF2C9BEF2262CD2300BEFD36 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		AF5327F42262C9F4009F2FB8 /* Journal25.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal25.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5327F72262C9F4009F2FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF5327FC2262C9F4009F2FB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,17 +34,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2C9BEE2262CC9F00BEFD36 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF2C9BEC2262CC9F00BEFD36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C9BED2262CC9F00BEFD36 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF5327EB2262C9F4009F2FB8 = {
 			isa = PBXGroup;
 			children = (
 				AF5327F62262C9F4009F2FB8 /* Journal25 */,
 				AF5327F52262C9F4009F2FB8 /* Products */,
+				AF2C9BEC2262CC9F00BEFD36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 		AF5327F62262C9F4009F2FB8 /* Journal25 */ = {
 			isa = PBXGroup;
 			children = (
+				AF2C9BEB2262CC9C00BEFD36 /* Journal25.entitlements */,
 				AF53280D2262CA5E009F2FB8 /* Models */,
 				AF53280C2262CA57009F2FB8 /* Model Controllers */,
 				AF53280B2262CA50009F2FB8 /* View Controllers */,
@@ -90,6 +108,7 @@
 		AF53280C2262CA57009F2FB8 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF2C9BEF2262CD2300BEFD36 /* EntryController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -97,6 +116,7 @@
 		AF53280D2262CA5E009F2FB8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF2C9BE92262CBFE00BEFD36 /* Entry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +153,14 @@
 				TargetAttributes = {
 					AF5327F32262C9F4009F2FB8 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -172,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2C9BF02262CD2300BEFD36 /* EntryController.swift in Sources */,
+				AF2C9BEA2262CBFE00BEFD36 /* Entry.swift in Sources */,
 				AF5327F82262C9F4009F2FB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Journal25/Journal25.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5VMA54SBQ;
 				INFOPLIST_FILE = Journal25/Info.plist;
@@ -336,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Journal25/Journal25.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5VMA54SBQ;
 				INFOPLIST_FILE = Journal25/Info.plist;
